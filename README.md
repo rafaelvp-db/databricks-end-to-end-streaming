@@ -31,3 +31,22 @@ Kafka Streaming has some challenges when it comes to Avro Evolving Schemas with 
         * It is **really** important that these exact versions are used, otherwise it won't work.
     * Highly recommended to upload the jar files into DBFS and install from there, so that they can be quickly installed when job clusters are created
     * If you plan on running examples for both MSK and Confluent, make sure to use separate clusters, so that there is not conflict amongst the dependencies
+
+### Basic Instructions
+
+* Copy the Avro schemas in the *schemas* folder into a location in DBFS
+* Reference that location in the notebooks
+* Configure secret scopes for the Kafka authentication and Schema Registry parameters
+* Start the producer notebook - random events will be generated and published into your Kafka broker(s)
+* You can then:
+    * Manually start the ingestion, bronze, silver and gold notebooks
+    * Or import the Databricks Jobs Workflows JSON definitions into your workspace, and start these jobs
+        * Make sure to replace the necessary parameters in these JSON files prior to running the jobs
+
+### References
+
+* [Databricks Jobs API](https://docs.databricks.com/dev-tools/api/latest/jobs.html)
+* [Databricks Terraform Provider](https://registry.terraform.io/providers/databrickslabs/databricks/latest/docs)
+* [Databricks Secret Scopes](https://docs.databricks.com/security/secrets/secret-scopes.html)
+* [Spark 3.0 Structured Streaming Programming Guide](https://spark.apache.org/docs/latest/structured-streaming-programming-guide.html)
+* [Delta Table Streaming Reads and Writes](https://docs.databricks.com/delta/delta-streaming.html)
