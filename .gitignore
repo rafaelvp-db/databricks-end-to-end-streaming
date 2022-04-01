@@ -2,6 +2,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
@@ -138,6 +139,8 @@ dmypy.json
 >>>>>>> v1.0
 =======
 >>>>>>> v1.0
+=======
+>>>>>>> v1.0
 *.pyc
 *.whl
 *.DS_Store
@@ -145,6 +148,10 @@ dmypy.json
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+*.venv
+>>>>>>> v1.0
+=======
 *.venv
 >>>>>>> v1.0
 =======
