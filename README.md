@@ -24,3 +24,4 @@ The ingestion notebooks for each platform have their own particularities due to 
         * [kafka_clients_2_6_0.jar](https://mvnrepository.com/artifact/org.apache.kafka/kafka-clients/2.6.0)
         * It is **really** important that these exact versions are used, otherwise it won't work.
     * Highly recommended to upload the jar files into DBFS and install from there, so that they can be quickly installed when job clusters are created
+    * If you plan on running examples for both MSK and Confluent, make sure to use separate clusters, so that there is not conflict amongst the dependencies
