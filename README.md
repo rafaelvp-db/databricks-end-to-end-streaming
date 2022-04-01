@@ -8,6 +8,12 @@ The code in this repo can be used as a starting point for integrating with diffe
 
 The ingestion notebooks for each platform have their own particularities due to the different libraries used for integrating with the Schema Registry (AWS Glue for MSK and Confluent Schema Registry for Confluent Kafka). There are also separate notebooks for Confluent and MSK which act as random event producers in order to facilitate simulations.
 
+### Background
+
+<img src="https://docs.confluent.io/platform/current/_images/schema-registry-and-kafka.png" alt="Source: Confluent website"/>
+
+Kafka Streaming has some challenges when it comes to Avro Evolving Schemas with multiple versions. It might be complex to deal with this scenario when developing [Databricks Spark Structured Streaming](https://docs.databricks.com/spark/latest/structured-streaming/data-sources.html) applications. In these notebooks, we present basic examples of integrating with Kafka Schema Registries in both MSK and Confluent, in a fictitious scenario where there are multiple Avro Schema versions.
+
 ### Requirements
 
 * An AWS MSK or Confluent Kafka broker
