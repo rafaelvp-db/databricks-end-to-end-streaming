@@ -3,8 +3,8 @@
 
 The code in this repo can be used as a starting point for integrating with different types of Kafka PaaS offerings:
 
-* AWS MSK
-* Confluent Kafka
+* [AWS MSK](https://aws.amazon.com/msk/)
+* [Confluent Kafka](https://confluent.io)
 
 The ingestion notebooks for each platform have their own particularities due to the different libraries used for integrating with the Schema Registry (AWS Glue for MSK and Confluent Schema Registry for Confluent Kafka). There are also separate notebooks for Confluent and MSK which act as random event producers in order to facilitate simulations.
 
