@@ -45,7 +45,7 @@ Kafka Streaming has some challenges when it comes to Avro Evolving Schemas with 
 
 ### TODO
 
-* Terraform IaC scripts for deploying Databricks Jobs into Workspaces
+* ~~Terraform IaC scripts for deploying Databricks Jobs into Workspaces~~
 
 ### References
 
