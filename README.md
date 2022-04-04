@@ -57,6 +57,6 @@ Kafka Streaming has some challenges when it comes to Avro Evolving Schemas with 
 
 ### Credits
 
-* [Vuong Nguyen] (https://github.com/nkvuong)
-* [Angela Chu] (https://github.com/angelamchu)
-* [Rafael Pierre] (https://github.com/rafaelvp-db)
+* [Vuong Nguyen](https://github.com/nkvuong)
+* [Angela Chu](https://github.com/angelamchu)
+* [Rafael Pierre](https://github.com/rafaelvp-db)
