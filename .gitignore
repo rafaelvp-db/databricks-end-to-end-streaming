@@ -124,3 +124,9 @@ venv.bak/
 .mypy_cache/
 .dmypy.json
 dmypy.json
+
+*.hcl
+*.terraform
+*.tfvars
+*.tfstate
+*.tfstate.*
