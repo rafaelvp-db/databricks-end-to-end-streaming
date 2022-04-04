@@ -1,0 +1,28 @@
+{
+  "doc": "Schema for Products",
+  "name": "Product",
+  "namespace": "com.company.product",
+  "type": "record",
+  "fields": [
+    {
+      "name": "productId",
+      "type": "string",
+      "doc": "ID of the Product"
+    },
+    {
+      "name": "eventId",
+      "type": "string",
+      "doc": "Event ID (UUID)"
+    },
+    {
+      "name": "type",
+      "type": "string",
+      "doc": "Product Type"
+    },
+    {
+      "name": "timestamp",
+      "type": "long",
+      "doc": "Unix timestamp of the event"
+    }
+  ]
+}

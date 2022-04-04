@@ -1,0 +1,102 @@
+{
+    "settings": {
+        "timeout_seconds": 0,
+        "email_notifications": {},
+        "name": "ingest_confluent",
+        "max_concurrent_runs": 1,
+        "tasks": [
+            {
+                "job_cluster_key": "ingest_confluent_cluster",
+                "libraries": [
+                    {
+                        "jar": "dbfs:/FileStore/confluent/jars/kafka_schema_registry_client_5_3_1.jar"
+                    },
+                    {
+                        "jar": "dbfs:/FileStore/confluent/jars/kafka_clients_2_6_0.jar"
+                    }
+                ],
+                "notebook_task": {
+                    "notebook_path": "<DBFS-PATH-TO-CONFLUENT-INGESTION-NOTEBOOK>"
+                },
+                "timeout_seconds": 0,
+                "email_notifications": {},
+                "task_key": "ingest_confluent",
+                "description": ""
+            },
+            {
+                "job_cluster_key": "ingest_confluent_cluster",
+                "notebook_task": {
+                    "notebook_path": "<DBFS-PATH-TO-BRONZE-NOTEBOOK>",
+                    "base_parameters": {
+                        "source_table": "raw_events_confluent",
+                        "target_table": "product_bronze"
+                    }
+                },
+                "timeout_seconds": 0,
+                "email_notifications": {},
+                "task_key": "bronze_layer",
+                "depends_on": [
+                    {
+                        "task_key": "ingest_confluent"
+                    }
+                ]
+            },
+            {
+                "job_cluster_key": "ingest_confluent_cluster",
+                "notebook_task": {
+                    "notebook_path": "<DBFS-PATH-TO-SILVER-NOTEBOOK>",
+                    "base_parameters": {
+                        "source_table": "product_bronze",
+                        "target_table": "product_silver"
+                    }
+                },
+                "timeout_seconds": 0,
+                "email_notifications": {},
+                "task_key": "silver_layer",
+                "depends_on": [
+                    {
+                        "task_key": "bronze_layer"
+                    }
+                ]
+            },
+            {
+                "job_cluster_key": "ingest_confluent_cluster",
+                "notebook_task": {
+                    "notebook_path": "<DBFS-PATH-TO-GOLD-NOTEBOOK>",
+                    "base_parameters": {
+                        "source_table": "product_silver",
+                        "target_table": "product_gold"
+                    }
+                },
+                "timeout_seconds": 0,
+                "email_notifications": {},
+                "task_key": "gold_layer",
+                "depends_on": [
+                    {
+                        "task_key": "silver_layer"
+                    }
+                ]
+            }
+        ],
+        "job_clusters": [
+            {
+                "job_cluster_key": "ingest_confluent_cluster",
+                "new_cluster": {
+                    "cluster_name": "",
+                    "spark_version": "9.1.x-scala2.12",
+                    "aws_attributes": {
+                        "ebs_volume_count": 0,
+                        "availability": "SPOT_WITH_FALLBACK",
+                        "first_on_demand": 1,
+                        "zone_id": "us-west-2a"
+                    },
+                    "node_type_id": "i3.xlarge",
+                    "spark_env_vars": {
+                        "PYSPARK_PYTHON": "/databricks/python3/bin/python3"
+                    },
+                    "num_workers": 3
+                }
+            }
+        ]
+    }
+}
