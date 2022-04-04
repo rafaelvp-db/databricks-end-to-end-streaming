@@ -54,3 +54,9 @@ Kafka Streaming has some challenges when it comes to Avro Evolving Schemas with 
 * [Databricks Secret Scopes](https://docs.databricks.com/security/secrets/secret-scopes.html)
 * [Spark 3.0 Structured Streaming Programming Guide](https://spark.apache.org/docs/latest/structured-streaming-programming-guide.html)
 * [Delta Table Streaming Reads and Writes](https://docs.databricks.com/delta/delta-streaming.html)
+
+### Credits
+
+* [Vuong Nguyen] (https://github.com/nkvuong)
+* [Angela Chu] (https://github.com/angelamchu)
+* [Rafael Pierre] (https://github.com/rafaelvp-db)
