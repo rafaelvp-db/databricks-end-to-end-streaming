@@ -36,9 +36,11 @@ resource "databricks_job" "this" {
     notebook_task {
       notebook_path = "/dbfs/tmp/ingest.py"
     }
-
     library {
       jar = "dbfs:/FileStore/depop/jars/kafka_schema_registry_client_5_3_1.jar"
+    }
+    library {
+      jar = "dbfs:/FileStore/depop/jars/kafka_clients_2_6_0.jar"
     }
   }
 
