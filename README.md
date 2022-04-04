@@ -43,6 +43,10 @@ Kafka Streaming has some challenges when it comes to Avro Evolving Schemas with 
     * Or import the Databricks Jobs Workflows JSON definitions into your workspace, and start these jobs
         * Make sure to replace the necessary parameters in these JSON files prior to running the jobs
 
+### TODO
+
+* Terraform IaC scripts for deploying Databricks Jobs into Workspaces
+
 ### References
 
 * [Databricks Jobs API](https://docs.databricks.com/dev-tools/api/latest/jobs.html)
