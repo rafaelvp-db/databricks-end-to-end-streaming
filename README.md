@@ -39,8 +39,8 @@ Kafka Streaming has some challenges when it comes to Avro Evolving Schemas with 
 * Configure secret scopes for the Kafka authentication and Schema Registry parameters
 * Start the producer notebook - random events will be generated and published into your Kafka broker(s)
 * You can then:
-    * Manually start the ingestion, bronze, silver and gold notebooks
-    * Or import the Databricks Jobs Workflows JSON definitions into your workspace, and start these jobs
+    * Manually start the ingestion, bronze, silver and gold notebooks, or
+    * Deploy Databricks Jobs/Workflows with [Terraform](https://www.terraform.io/)
         * Make sure to replace the necessary parameters in these JSON files prior to running the jobs
 
 ### TODO
