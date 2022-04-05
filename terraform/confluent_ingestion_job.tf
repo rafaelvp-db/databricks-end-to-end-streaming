@@ -55,8 +55,8 @@ resource "databricks_job" "this" {
     notebook_task {
       notebook_path = "/dbfs/tmp/bronze.py"
       base_parameters = {
-          source_table = "raw_events"
-          target_table = "bronze_table"
+          source_table = var.bronze_source_table
+          target_table = var.bronze_target_table
       }
     }
   }
@@ -72,8 +72,8 @@ resource "databricks_job" "this" {
     notebook_task {
       notebook_path = "/dbfs/tmp/silver.py"
       base_parameters = {
-          source_table = "bronze_table"
-          target_table = "silver_table"
+          source_table = var.silver_source_table
+          target_table = var.silver_target_table
       }
     }
   }
@@ -89,8 +89,8 @@ resource "databricks_job" "this" {
     notebook_task {
       notebook_path = "/dbfs/tmp/gold.py"
       base_parameters = {
-          source_table = "silver_table"
-          target_table = "gold_table"
+          source_table = var.gold_source_table
+          target_table = var.gold_target_table
       }
     }
   }
