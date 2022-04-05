@@ -5,7 +5,6 @@ checkpoint_path = "<CHECKPOINT-PATH>"
 
 source_table = getArgument("source_table")
 target_table = getArgument("target_table")
-checkpoint_location_source = f"{checkpoint_path}/{source_table}"
 checkpoint_location_target = f"{checkpoint_path}/{target_table}"
 
 # COMMAND ----------
@@ -15,7 +14,6 @@ startingOffsets = "latest"
 bronze_df = spark.readStream \
   .format("delta") \
   .option("startingOffsets", startingOffsets) \
-  .option("checkpointLocation", checkpoint_location_source) \
   .table(source_table) \
   .selectExpr("parsedValue.*")
 
