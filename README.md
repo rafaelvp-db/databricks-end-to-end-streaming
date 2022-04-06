@@ -41,7 +41,7 @@ Kafka Streaming has some challenges when it comes to Avro Evolving Schemas with 
 * You can then:
     * Manually start the ingestion, bronze, silver and gold notebooks, or
     * Deploy Databricks Jobs/Workflows with [Terraform](https://www.terraform.io/)
-        * Make sure to replace the necessary parameters in these JSON files prior to running the jobs
+        * Make sure to replace the necessary parameters in the TF files prior to deploying the jobs
 
 ### TODO
 
